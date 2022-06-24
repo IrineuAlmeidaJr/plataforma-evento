@@ -1,6 +1,7 @@
 import { CheckCircle, Lock } from 'phosphor-react'
 import { isPast, format } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
+import { Link } from 'react-router-dom';
 // Importo o ptBR do date-fns e depois coloca dentro do formate como locale, para 
 // ficar em portugues, no caso os dias da semana e mês em portugues
 
@@ -18,12 +19,17 @@ export function Lesson(props: LessonProps) {
     })
 
     return (
-        <a href="#">
+        // O group ele forma um grupo ai nós utilizamos para fazer um estilo de quando passar
+        // por cima de qualquer parte de grupo vai fazer um hover mudando a cor da borda
+        // para verde, mesmo que eu não passe com o cursor do mouse envima da caixinha 
+        // propriamente dita, se passar na tag que tem o group já irá mudar a cor da borda,
+        // para tanto usou group-hover para identificar o elemento que devo mudar
+        <Link to={`/event/lesson/${props.slug}`}className='group'>
             <span className="text-gray-300">
                 {availableDateDormatted}
             </span>
 
-            <div className="rounded border border-gray-500 p-4 mt-2">
+            <div className="rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500">
                 <header className="flex items-center justify-between">
                 {isLessonAvailable ? (
                         <span className="text-sm text-blue-500 font-medium flex items-center gap-2">
@@ -45,6 +51,6 @@ export function Lesson(props: LessonProps) {
                     {props.title}
                 </strong>
             </div>
-        </a>
+        </Link>
     )
 }
