@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
 import { Lesson } from "./Lesson";
 
 const GET_LESSONS_QUERY = gql`
@@ -24,6 +25,8 @@ interface GetLessonsQueryResponse {
 }
 
 export function Sidebar() {
+    const { slug } = useParams(); 
+
     const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY)
 
     return (
@@ -36,6 +39,7 @@ export function Sidebar() {
                 {data?.lessons.map(lesson => {
                     return (
                         <Lesson
+                            active={lesson.slug === slug}
                             key={lesson.id}
                             title={lesson.title}
                             slug={lesson.slug}
