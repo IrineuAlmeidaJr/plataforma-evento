@@ -10,6 +10,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Aqui criamo no caso um fundo personalizado, um background
+      backgroundImage: {
+        // Dica: sempre colocar os meus assets dentro da pasta src
+        blur: 'url(/src/assets/blur-background.png)'
+      },
       fontFamily: {
         sans: 'Roboto, sans-serif',
       },
