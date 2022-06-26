@@ -13,7 +13,7 @@ module.exports = {
       // Aqui criamo no caso um fundo personalizado, um background
       backgroundImage: {
         // Dica: sempre colocar os meus assets dentro da pasta src
-        blur: 'url(/src/assets/blur-background.png)'
+        blur: 'url(/src/public/assets/blur-background.png)'
       },
       fontFamily: {
         sans: 'Roboto, sans-serif',
