@@ -2,14 +2,7 @@ import { gql, useMutation } from "@apollo/client";
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
-
-const CREATE_SUBSCRIBER_MUTATION = gql `
-    mutation CreateSubscriber($name: String!, $email: String!) {
-        createSubscriber(data: {name: $name, email: $email}) {
-            id
-        }
-    }    
-`
+import { useCreateSubscriberMutation } from "../graphql/generated";
 
 export function Subscribe() {
     // useNavigate() -> redireciona o usuário para um outra tela/link sem que ele
@@ -28,7 +21,8 @@ export function Subscribe() {
     // na mutation tambem eu posso receber algo de retorno, no nosso caso ele
     // retorna o id, mas, por enquanto não iremos pegar esse dado e só
     // iremos pegar o createSubscriber.
-    const [createSubscriber, { loading }] = useMutation(CREATE_SUBSCRIBER_MUTATION);
+    const [createSubscriber, { loading }] = useCreateSubscriberMutation()
+    // const [createSubscriber, { loading }] = useMutation(CREATE_SUBSCRIBER_MUTATION);
     // Temo um segundo parametro que retorna que é o loading que irá dizer se
     // já terminou ou não a mutation, então, se true que dizer que terminou, se
     // false quer dizer que ainda está sendo feita, ai podemos colocar isso no

@@ -1,0 +1,18 @@
+schema: https://api-sa-east-1.graphcms.com/v2/cl4o7n87y118i01xxe54who02/master
+
+documents: './src/graphql/**/*.graphql'
+
+generates:
+  ./src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    congig: 
+      reactApolloVersion: 3
+      withHooks: true #ele criar totalmente automática um hoock, uma função que 
+      # começa com use e especifica para cada query e mutation, então, ele cria 
+      # para nós por exempolo uma useGetLessons e só de chamar essar função vamos
+      # ter a query ou mutation pronta
+      withHOC: false
+      withComponents: false 
