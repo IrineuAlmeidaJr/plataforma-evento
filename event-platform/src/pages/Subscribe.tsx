@@ -1,8 +1,9 @@
 import { gql, useMutation } from "@apollo/client";
-import { useState, FormEvent } from "react";
+import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { useCreateSubscriberMutation } from "../graphql/generated";
+import ReactMockup from "/src/assets/code-mockup.png"
 
 export function Subscribe() {
     // useNavigate() -> redireciona o usuário para um outra tela/link sem que ele
@@ -88,7 +89,7 @@ export function Subscribe() {
                 </div>
 
             </div>
-            <img src={'/src/assets/code-mockup.png'} className="mt-10" alt={'Code Mockup'} />
+            <img src={ReactMockup} className="mt-10" alt='imageCodeMockup' />
         </div>
     )
 }
