@@ -1,5 +1,5 @@
 <h1 align="center">Ignate Lab - Plataforma deEvento</h1>
-<h4 align="justify">Projeto realizado no Ignate Labt da RocketSeat(junho/2022) com implementações extras, o projeto é uma plataforma de evento, semelhante ao que a RocketSeat utiliza em seus eventos, criado com ViteJS, React, TypeScriptTailwind CSS. </h4>
+<h4 align="justify">Projeto realizado no Ignate Labt da RocketSeat(junho/2022) com implementações extras, o projeto é uma plataforma de evento, semelhante ao que a RocketSeat utiliza em seus eventos, criado com ViteJS, React, TypeScript e Tailwind CSS. </h4>
 
 <h2 align="center"><a href="https://plataforma-evento.vercel.app">Clique aqui para ver meu projeto!</a></h2>
 
